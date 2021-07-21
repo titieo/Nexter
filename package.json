@@ -1,0 +1,17 @@
+{
+    "name": "trillo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "scripts": {
+        "dev": "NODE_ENV=development BROWSER=firefox vite",
+        "build": "NODE_ENV=production vite build"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.3.1",
+        "cssnano": "^5.0.6",
+        "postcss": "^8.3.5",
+        "sass": "^1.35.2",
+        "vite": "^2.4.2"
+    }
+}

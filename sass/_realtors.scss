@@ -1,0 +1,30 @@
+@use "base" as *;
+
+.realtors {
+    background-color: $color-secondary;
+    grid-column: col-start 7 / full-end;
+    padding: 3rem;
+    display: grid;
+    place-content: center;
+    row-gap: 2rem;
+    justify-items: center;
+    &__list {
+        display: grid;
+        grid-template: repeat(3, 1fr) / min-content max-content;
+        gap: 5vh 2rem;
+        align-items: center;
+    }
+    &__img {
+        border-radius: 100%;
+        @include size(7rem);
+        object-fit: cover;
+        display: block;
+    }
+    &__details {
+    }
+    &__sold {
+        text-transform: uppercase;
+        color: $color-grey-light-2;
+        margin-top: -3px;
+    }
+}
