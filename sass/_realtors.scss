@@ -4,24 +4,37 @@
     background-color: $color-secondary;
     grid-column: col-start 7 / full-end;
     padding: 3rem;
+
     display: grid;
     place-content: center;
-    row-gap: 2rem;
     justify-items: center;
+    row-gap: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        grid-column: 1 / -1;
+    }
+
     &__list {
         display: grid;
-        grid-template: repeat(3, 1fr) / min-content max-content;
-        gap: 5vh 2rem;
+        grid-template-columns: min-content max-content;
+        grid-column-gap: 2rem;
+        grid-row-gap: 5vh;
         align-items: center;
+
+        @media only screen and (max-width: $bp-medium) {
+            grid-template-columns: repeat(3, min-content max-content);
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            grid-template-columns: min-content max-content;
+        }
     }
     &__img {
         border-radius: 100%;
-        @include size(7rem);
-        object-fit: cover;
+        width: 7rem;
         display: block;
     }
-    &__details {
-    }
+
     &__sold {
         text-transform: uppercase;
         color: $color-grey-light-2;

@@ -4,10 +4,12 @@
 
     margin: 15rem 0;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    gap: 6rem;
-    // Don't have to define grid-template-rows: repeat(3,auto); This is default
+    @supports (display: grid) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        // Don't have to define grid-template-rows: repeat(3,auto); This is default
+        gap: 6rem;
+    }
 }
 .feature {
     display: grid;
@@ -15,6 +17,15 @@
     row-gap: 1.5rem;
     column-gap: 2.5rem;
     align-items: start;
+
+    float: left;
+    width: 33.33333333333%;
+    margin-bottom: 6rem;
+
+    @supports (display: grid) {
+        width: auto;
+        margin-bottom: 0;
+    }
 
     &__icon {
         fill: $color-primary;
